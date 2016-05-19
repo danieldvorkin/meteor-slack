@@ -1,9 +1,7 @@
 <template name="messages">
 	<div class="message-history">
-	  {{> message text="This is the first message" }}
-	  {{> message text="This is the second message" }}
-	  {{> message text="This is the third message" }}
-	  {{> message text="This is the fourth message" }}
-	  {{> message text="This is the fifth message" }}
+	  {{#each messages}}
+	  	{{> message text=text time=time}}
+	  {{/each}}
 	</div>
 </template>
