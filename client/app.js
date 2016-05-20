@@ -1,7 +1,6 @@
 Template.messages.helpers ({
 	messages: Messages.find({})
 });
-
 Template.registerHelper("usernameFromId", function (userId){
 	var user = Meteor.users.findOne({_id: userId});
 	if (typeof user === "undefined") {
@@ -18,3 +17,5 @@ Template.registerHelper("timestampToTime", function(timestamp){
 	console.log(hours + ":" + minutes.substr(minutes.length - 2));
 	return hours + ":" + minutes.substr(minutes.length - 2);
 });
+
+Meteor.subscribe("messages");

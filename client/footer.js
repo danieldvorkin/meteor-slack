@@ -1,7 +1,5 @@
 Template.footer.events({
 	'keypress input': function(e) {
-		console.log("User:" + Meteor.userId());
-		console.log("Timestamp: " + Date.now());
 		var inputVal = $('.input-box_text').val();
 		
 		if (!!inputVal) {
