@@ -1,7 +1,7 @@
 <template name="messages">
 	<div class="message-history">
 	  {{#each messages}}
-	  	{{> message text=text time=time}}
+	  	{{> message text=text timestamp=timestamp user=user }}
 	  {{/each}}
 	</div>
 </template>

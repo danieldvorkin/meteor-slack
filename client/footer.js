@@ -1,11 +1,21 @@
 Template.footer.events({
 	'keypress input': function(e) {
+		console.log("User:" + Meteor.userId());
+		console.log("Timestamp: " + Date.now());
 		var inputVal = $('.input-box_text').val();
+		
 		if (!!inputVal) {
 			var charCode = (typeof e.which == 'number') ? e.which : e.keyCode;
+			
 			if (charCode === 13){
 				e.stopPropagation();
-				Messages.insert({ text: inputVal });
+				
+				Messages.insert({
+				 text: inputVal,
+				 user: Meteor.userId(),
+				 timestamp: Date.now()
+				});
+
 				$('.input-box_text').val("");
 				return false;
 			}
